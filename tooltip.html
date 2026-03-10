@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Tooltip Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Arial Narrow Bold';
+  }
+  
+  body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#212121;
+  }
+  
+  .tooltip-container{
+    position:relative;
+    cursor:pointer;
+    font-size:17px;
+  }
+  
+  .tooltip{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    padding:10px;
+    opacity: 0;
+    pointer-events:none;
+    transition:0.3s ease;
+    border-radius:15px;
+    box-shadow:
+      inset 5px 5px 5px rgba(0,0,0,0.2),
+      inset -5px -5px 15px rgba(255,255,255,0.1),
+      5px 5px 15px rgba(0,0,0,0.3),
+      -5px -5px 15px rgba(255,255,255,0.1);
+  }
+  
+  .tooltip-container:hover .tooltip{
+    top:-150px;
+    opacity:1;
+    pointer-events:auto;
+  }
+  
+  
+  .profile{
+    background:#2a2b2f;
+    border-radius:12px;
+    padding:10px;
+    border:0.8px solid #ee7a50be;
+    width:220px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  }
+  
+  .user{
+    display:flex;
+    gap:10px;
+    align-items:center;
+  }
+  
+  .img{
+    width:40px;
+    height:40px;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    color:#e6683c;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+
+  }
+  
+  .details{
+    color:#fff;
+  }
+  
+  .name{
+    margin-top: 3px;
+    font-weight:bold;
+    color:#e6683c;
+  }
+  
+  .username{
+    font-size:12px;
+    color:#aaa;
+  }
+  
+  .about{
+    margin-top:8px;
+    color:#ccc;
+    font-size:14px;
+  }
+  
+  .icon{
+    text-decoration:none;
+    color:#fff;
+    position:relative;
+    display:block;
+  }
+  
+  .layer{
+    width:60px;
+    height:60px;
+    position:relative;
+    transition:0.3s;
+  }
+  
+  .icon:hover .layer{
+    transform:rotate(-35deg) skew(20deg);
+  }
+  
+  .layer span{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border:2px solid #e6683c;
+    border-radius:15px;
+    transition:0.3s;
+  }
+  
+  .icon:hover .layer span:nth-child(1){
+    opacity:0.2;
+  }
+  .icon:hover .layer span:nth-child(2){
+    opacity:0.4;
+    transform:translate(5px,-5px);
+  }
+  .icon:hover .layer span:nth-child(3){
+    opacity:0.6;
+    transform:translate(10px,-10px);
+  }
+  .icon:hover .layer span:nth-child(4){
+    opacity:0.8;
+    transform:translate(15px,-15px);
+  }
+  .icon:hover .layer span:nth-child(5){
+    transform:translate(20px,-20px);
+  }
+  
+  .instagramSVG{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
+    color:#fff;
+    background:linear-gradient(
+      45deg,
+      #f09433,
+      #e6683c,
+      #dc2743,
+      #cc2366,
+      #bc1888
+    );
+  }
+  
+  .text-label{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:-10px;
+    opacity:0;
+    transition:0.3s;
+    font-weight:500;
+    color:#e6683c;
+  }
+  
+  .icon:hover .text-label{
+    bottom:-35px;
+    opacity:1;
+  }
+</style>
+
+</head>
+<body>
+
+    	<!-- REMOVE -->
+ <div style="margin-bottom: 500px;">
+     <h1 style="color: white;">“Your one subscribe motivates me 1000%.”</h1>
+  <a href="https://www.youtube.com/@Free-Code-Zone"
+     target="_blank" 
+     style="display:inline-block; padding:12px 25px; background:red; color:white; 
+            text-decoration:none; border-radius:6px; font-size:18px; font-family:sans-serif;">
+    Subscribe Now
+  </a>
+ </div>
+  <!-- REMOVE -->
+
+
+  <div class="tooltip-container" style="position: fixed;">
+
+    <div class="tooltip">
+      <div class="profile">
+        <div class="user">
+          <div><img class="img" src="your image" alt="img" ></div>
+          <div class="details">
+            <div class="name">Free Code Zone</div>
+            <div class="username">@free.code.zone</div>
+          </div>
+        </div>
+        <div class="about">4.8k Followers</div>
+      </div>
+    </div>
+
+    <div class="text">
+      <a class="icon" href="https://www.instagram.com/free.code.zone/">
+        <div class="layer">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="instagramSVG">
+            <i class="fa-brands fa-instagram"></i>
+          </span>
+        </div>
+        <div class="text-label">INSTAGRAM</div>
+      </a>
+    </div>
+
+  </div>
+
+  
+
+</body>
+</html>
